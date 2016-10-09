@@ -33,27 +33,34 @@ public class Addition {
         } else if (numerator % 2 == 0 && denominator % 2 == 0) {
             evenResult(numerator, denominator);
         } else {
-            System.out.println("\n\tResult of " + this.fract1 + " + " + this.fract2 + " : " + numerator + "/" + denominator);
-            System.out.println("");
+            print(numerator, denominator);
         }
     }
 
     public void oddResult(int num, int den) {
-        while (num != 0 && num % 3 == 0 && den % 3 == 0) {
-            num = num / 3;
-            den = den / 3;
+        int nume = num, denome = den;
+        while (nume != 0 && nume % 3 == 0 && denome % 3 == 0) {
+            nume = nume / 3;
+            denome = denome / 3;
         }
-        System.out.println("\n\tResult of " + this.fract1 + " + " + this.fract2 + " : " + num + "/" + den);
-        System.out.println("");
+        print(nume, denome);
     }
 
     public void evenResult(int num, int den) {
-        while (num != 0 && num % 2 == 0 && den % 2 == 0) {
-            num = num / 2;
-            den = den / 2;
+        int nume = num, denome = den;
+        while (nume != 0 && nume % 2 == 0 && denome % 2 == 0) {
+            nume = nume / 2;
+            denome = denome / 2;
         }
-        System.out.println("\n\tResult of " + this.fract1 + " + " + this.fract2 + " : " + num + "/" + den);
-        System.out.println("");
+        print(nume, denome);
+    }
+
+    public void print(int num, int den) {
+        if (num == 1 && den == 1) {
+            System.out.println("\n\tResult of " + this.fract1 + " + " + this.fract2 + " : " + num + "/" + den + " = 1" + "\n");
+        } else {
+            System.out.println("\n\tResult of " + this.fract1 + " + " + this.fract2 + " : " + num + "/" + den + "\n");
+        }
     }
 
 }
